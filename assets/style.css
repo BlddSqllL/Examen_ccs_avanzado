@@ -1,0 +1,159 @@
+body{
+    background-color: white
+
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    
+    "header"
+    "aside"
+    "main"
+    "footer"
+    ;
+}
+
+.header {
+    grid-area: header;
+    background-color: rgb(241, 231, 251);
+    color: rgb(88, 23, 149);
+    padding: 10px;
+
+    display: flex;
+}
+
+.header .logo { 
+    filter: grayscale(100%);
+    width: 80px;
+}
+.header .info {
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.aside {
+    grid-area: aside;
+    color: rgb(88, 23, 149);
+
+}
+
+.aside .menu {
+    font-size: smaller;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main {
+    grid-area: main;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.main .card { 
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+    width: 396px;
+    height: 382px;
+    filter: grayscale(100%);
+    transition: all 1s;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.main .card:hover {
+    margin-bottom: 0;
+    border-radius: 0;
+    width: 500px;
+    height: 460px;
+    filter: none;
+}
+
+.main img {
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (min-width: 540px) and (max-width: 768px) {
+    .main{
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .container {
+        display: grid;
+        grid-template-areas: 
+        
+        "header main main"
+        "aside  main main"
+        "aside main main"
+        "aside main main"
+        "aside main main"
+        "aside main main"
+        "aside main main"
+        "footer main main"
+        ;
+        gap: 10px;
+    }
+
+    .header {
+        width: 140px;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .header .info{
+        display: none;
+
+    }
+
+    .header .logo { 
+        filter: grayscale(100%);
+        width: 70px;
+        height: 70px;
+    }
+
+    .aside .menu{
+        border: 1px solid;
+        width: 158px;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        
+    }
+
+    .main{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+
+    .footer h4{
+        display: none;
+    }
+
+}
+
